@@ -10,47 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213172802) do
-
-  create_table "actor_roles", id: false, force: :cascade do |t|
-    t.integer "actor_id"
-    t.integer "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["actor_id"], name: "index_actor_roles_on_actor_id"
-    t.index ["movie_id"], name: "index_actor_roles_on_movie_id"
+ActiveRecord::Schema.define(version: 20_171_213_172_802) do
+  create_table 'actor_roles', id: false, force: :cascade do |t|
+    t.integer 'actor_id'
+    t.integer 'movie_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['actor_id'], name: 'index_actor_roles_on_actor_id'
+    t.index ['movie_id'], name: 'index_actor_roles_on_movie_id'
   end
 
-  create_table "actors", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.date "birth_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'actors', force: :cascade do |t|
+    t.string 'first_name'
+    t.string 'last_name'
+    t.date 'birth_date'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "movies", force: :cascade do |t|
-    t.string "title", null: false
-    t.integer "year", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'movies', force: :cascade do |t|
+    t.string 'title', null: false
+    t.integer 'year', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.string "title"
-    t.text "text"
-    t.integer "movie_id"
-    t.integer "foreight_key_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["foreight_key_id"], name: "index_reviews_on_foreight_key_id"
-    t.index ["movie_id"], name: "index_reviews_on_movie_id"
+  create_table 'reviews', force: :cascade do |t|
+    t.string 'title'
+    t.text 'text'
+    t.integer 'movie_id'
+    t.integer 'foreight_key_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['foreight_key_id'], name: 'index_reviews_on_foreight_key_id'
+    t.index ['movie_id'], name: 'index_reviews_on_movie_id'
   end
 
-  create_table "roles", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'roles', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end

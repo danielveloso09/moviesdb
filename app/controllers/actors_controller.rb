@@ -1,5 +1,5 @@
 class ActorsController < ApplicationController
-  before_action :set_actor, only: [:show, :edit, :update, :destroy]
+  before_action :set_actor, only: %i[show edit update destroy]
 
   # GET /actors
   # GET /actors.json
@@ -9,8 +9,7 @@ class ActorsController < ApplicationController
 
   # GET /actors/1
   # GET /actors/1.json
-  def show
-  end
+  def show; end
 
   # GET /actors/new
   def new
@@ -66,13 +65,14 @@ class ActorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_actor
-      @actor = Actor.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def actor_params
-      params.require(:actor).permit(:first_name, :last_name, :birth_date)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_actor
+    @actor = Actor.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def actor_params
+    params.require(:actor).permit(:first_name, :last_name, :birth_date)
+  end
 end

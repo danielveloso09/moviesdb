@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
-
-  before_action :set_movie, except: [:index, :new, :create, :show]
+  before_action :set_movie, except: %i[index new create show]
 
   def index
     @movies = Movie.select(:id, :title).includes(:reviews)
@@ -8,7 +7,7 @@ class MoviesController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        render json: @movies.to_json( except: [:updated_at] )
+        render json: @movies.to_json(except: [:updated_at])
       end
       format.xml { render xml: @movies }
     end
@@ -37,7 +36,7 @@ class MoviesController < ApplicationController
   end
 
   def update
-    @movie.update( movie_params )
+    @movie.update(movie_params)
 
     respond_to do |format|
       if @movie.update(movie_params)
@@ -64,5 +63,4 @@ class MoviesController < ApplicationController
   def set_movie
     @movie = Movie.find(params[:id])
   end
-
 end

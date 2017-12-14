@@ -1,21 +1,18 @@
 class RolesController < ApplicationController
-
-  before_action :set_role, only: [:show, :destroy, :update]
+  before_action :set_role, only: %i[show destroy update]
 
   def index
     @roles = Role.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @role = Role.new
   end
 
   def create
-    @role = Role.new( role_params )
-
+    @role = Role.new(role_params)
 
     if @role.save
       redirect_to @role
@@ -29,7 +26,7 @@ class RolesController < ApplicationController
   end
 
   def update
-    @role.update( role_params )
+    @role.update(role_params)
 
     respond_to do |format|
       if @role.update(role_params)
@@ -56,5 +53,4 @@ class RolesController < ApplicationController
   def role_params
     params.require(:role).permit(:name)
   end
-
 end
