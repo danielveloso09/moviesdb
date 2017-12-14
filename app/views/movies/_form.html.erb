@@ -1,0 +1,15 @@
+<%= form_for @movie do |f| %>
+  <p>
+    Title:
+    <%= f.text_field :title %>
+    <%= @movie.errors[:title].to_sentence %>
+  </p>
+  <p>
+    Year:
+    <%= f.number_field :year %>
+    <%= @movie.errors[:year].to_sentence %>
+  </p>
+  <p>
+   <%= f.submit %>
+  </p>
+<% end %>

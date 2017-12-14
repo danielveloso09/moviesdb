@@ -1,0 +1,14 @@
+<h1>
+  List of all movies
+</h1>
+<ul>
+  <% @movies.each do |movie| %>
+    <li>
+     <%= link_to movie.title, movie %> (<%= pluralize movie.reviews.length, "review" %>)
+   </li>
+  <% end %>
+</ul>
+
+<p>
+  <%= link_to "Create a movie", :new_movie %>
+</p>

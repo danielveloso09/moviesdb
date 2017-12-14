@@ -1,0 +1,10 @@
+<%= form_for @role do |f| %>
+  <p>
+    Name of the role:
+    <%= f.text_field :name %>
+    <%= @role.errors[:name].to_sentence %>
+  </p>
+  <p>
+   <%= f.submit %>
+  </p>
+<% end %>

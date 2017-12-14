@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Moviedb</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <%= link_to "Actors", :actors %>
+    <%= link_to "Movies", :movies %>
+    <%= link_to "Roles", :roles %>
+
+    <%= yield %>
+  </body>
+</html>

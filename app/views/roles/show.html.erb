@@ -1,0 +1,9 @@
+<h1>
+  <%= @role.name %>
+</h1>
+
+<p>
+  <%= link_to "Edit", [:edit, @role] %>
+  <%= link_to "Remove", @role, method: :delete, data: { confirm: 'Are you sure?' }  %>
+  <%= link_to "Back to Index", :roles %>
+</p>

@@ -1,0 +1,14 @@
+<h1>
+  List of all roles
+</h1>
+<ul>
+  <% @roles.each do |role| %>
+    <li>
+     <%= link_to role.name, role %>
+   </li>
+  <% end %>
+</ul>
+
+<p>
+  <%= link_to "Create a role", :new_role %>
+</p>

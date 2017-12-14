@@ -1,0 +1,20 @@
+<h1>
+  <%= @movie.title %>
+  (<%= @movie.year %>)
+</h1>
+
+<% if @movie.reviews.any? %>
+
+  <% @movie.reviews.each do |review| %>
+
+    <%= review.title %>
+    <%= review.text %>
+
+  <% end %>
+<% end %>
+
+<p>
+  <%= link_to "Edit", [:edit, @movie] %>
+  <%= link_to "Remove", @movie, method: :delete, data: { confirm: 'Are you sure?' }  %>
+  <%= link_to "Back to Index", :movies %>
+</p>
