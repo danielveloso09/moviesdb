@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Movie, type: :model do
-  let(:movie) { build(:movie, movie_attributes) }
+  let(:movie) { described_class.new(movie_attributes) }
   let(:movie_attributes) { valid_attributes }
   let(:valid_attributes) { { title: 'Movie Title', year: 2017 } }
 
