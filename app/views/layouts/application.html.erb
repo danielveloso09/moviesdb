@@ -9,10 +9,16 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
     <%= link_to "Actors", :actors %>
     <%= link_to "Movies", :movies %>
     <%= link_to "Roles", :roles %>
+
+    <% if user_signed_in? %>
+      <%= link_to 'Logout', sign_out_path %>
+    <% end %>
 
     <%= yield %>
   </body>
