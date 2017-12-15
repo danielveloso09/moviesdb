@@ -19,7 +19,7 @@
         <td><%= actor.last_name %></td>
         <td><%= actor.birth_date %></td>
         <td><%= link_to 'Show', actor %></td>
-        <% if current_user.admin? %>
+        <% if can? :update, Actor %>
           <td><%= link_to 'Edit', edit_actor_path(actor) %></td>
           <td><%= link_to 'Destroy', actor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
@@ -30,6 +30,6 @@
 
 <br>
 
-<% if current_user.admin? %>
+<% if can? :update, @actors %>
   <%= link_to 'New Actor', new_actor_path %>
 <% end %>

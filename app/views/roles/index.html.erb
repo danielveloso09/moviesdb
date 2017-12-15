@@ -9,7 +9,7 @@
   <% end %>
 </ul>
 
-<% if current_user.admin? %>
+<% if can? :update, @roles %>
   <p>
     <%= link_to "Create a role", :new_role %>
   </p>

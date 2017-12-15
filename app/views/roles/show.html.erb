@@ -3,7 +3,7 @@
 </h1>
 
 <p>
-  <% if current_user.admin? %>
+  <% if can? :update, @role %>
     <%= link_to "Edit", [:edit, @role] %>
     <%= link_to "Remove", @role, method: :delete, data: { confirm: 'Are you sure?' }  %>
   <% end %>

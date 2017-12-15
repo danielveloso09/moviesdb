@@ -9,7 +9,7 @@
   <% end %>
 </ul>
 
-<% if current_user.admin? %>
+<% if can? :update, @movies %>
   <p>
     <%= link_to "Create a movie", :new_movie %>
   </p>

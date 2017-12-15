@@ -14,7 +14,7 @@
 <% end %>
 
 <p>
-  <% if current_user.admin? %>
+  <% if can? :update, @movie %>
     <%= link_to "Edit", [:edit, @movie] %>
     <%= link_to "Remove", @movie, method: :delete, data: { confirm: 'Are you sure?' }  %>
   <% end %>

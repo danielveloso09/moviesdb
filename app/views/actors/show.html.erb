@@ -15,7 +15,7 @@
   <%= @actor.birth_date %>
 </p>
 
-<% if current_user.admin? %>
+<% if can? :update, @actor %>
   <%= link_to 'Edit', edit_actor_path(@actor) %> |
 <% end %>
 
