@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  # FIXME
   def validate_user
     if !current_user.blank? &&
        !current_user.admin? &&
