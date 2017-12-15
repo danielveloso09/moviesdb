@@ -9,6 +9,8 @@
   <% end %>
 </ul>
 
-<p>
-  <%= link_to "Create a movie", :new_movie %>
-</p>
+<% if current_user.admin? %>
+  <p>
+    <%= link_to "Create a movie", :new_movie %>
+  </p>
+<% end %>

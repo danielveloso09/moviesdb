@@ -19,8 +19,10 @@
         <td><%= actor.last_name %></td>
         <td><%= actor.birth_date %></td>
         <td><%= link_to 'Show', actor %></td>
-        <td><%= link_to 'Edit', edit_actor_path(actor) %></td>
-        <td><%= link_to 'Destroy', actor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.admin? %>
+          <td><%= link_to 'Edit', edit_actor_path(actor) %></td>
+          <td><%= link_to 'Destroy', actor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Actor', new_actor_path %>
+<% if current_user.admin? %>
+  <%= link_to 'New Actor', new_actor_path %>
+<% end %>

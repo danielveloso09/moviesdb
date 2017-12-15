@@ -9,6 +9,8 @@
   <% end %>
 </ul>
 
-<p>
-  <%= link_to "Create a role", :new_role %>
-</p>
+<% if current_user.admin? %>
+  <p>
+    <%= link_to "Create a role", :new_role %>
+  </p>
+<% end %>
